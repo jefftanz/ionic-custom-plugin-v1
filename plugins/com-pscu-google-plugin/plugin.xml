@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com-pscu-google-plugin" 
+        version="0.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>GooglePay</name>
+    
+    <js-module name="GooglePay" src="www/GooglePay.js">
+        <clobbers target="cordova.plugins.GooglePay" />
+    </js-module>
+
+    <asset src="www/GooglePay.js" target="js/GooglePay.js"/>
+
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="GooglePay">
+            <param name="android-package"
+                    value="com.pscu.plugin.GooglePay"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/com/pscu/plugin/GooglePay.java" 
+        target-dir="src/android/com/pscu/plugin" />
+    </platform>
+</plugin>
