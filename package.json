@@ -26,8 +26,10 @@
     "@ionic/storage": "2.2.0",
     "cordova": "^9.0.0",
     "cordova-android": "^8.1.0",
+    "cordova-plugin-androidx": "^1.0.2",
+    "cordova-plugin-androidx-adapter": "^1.1.0",
     "cordova-plugin-camera": "^4.1.0",
-    "googlepay": "file:../../cordova-plugin/google-pay-plugin",
+    "googlepay": "file:../../cordova-plugin/android-cordova-plugin-v1",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
     "native-run": "^0.3.0",
@@ -61,6 +63,8 @@
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
       "com-droidada-cordova-temperature-plugin": {},
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-androidx-adapter": {},
       "com-pscu-google-plugin": {}
     },
     "platforms": [

@@ -1,35 +1,41 @@
 
-# CordovaTemperaturePlugin
-An ionic cordova android plugin for google pay
+# Cordova Plugin Example
+An ionic cordova android plugin example. Testing Dependencies.
+
 
 # Requirements
-An Ionic cordova project more info here https://ionicframework.com/docs/pro/basics/getting-started/
+An Ionic 3 application https://ionicframework.com/docs/v3/intro/installation/
+
 
 # Compatibility
 Android ONLY
 
+
 # Installation
-ionic cordova plugin add 'plugin local repository location'
+ionic cordova plugin add [PLUGIN_LOCAL_REPO_LOCATION]
+
+Example PLUGIN_LOCAL_REPO_LOCATION: /Users/jeffrey.tansey/repos/playground/ionic/cordova-plugin/google-pay-plugin
+
+In the Ionic 3 application terminal -> ionic cordova plugin add  /Users/jeffrey.tansey/repos/playground/ionic/cordova-plugin/google-pay-plugin
+
+If you make changes to the plugin and want to test the latest code in the Ionic 3 App, you will need to remove the plugin and re-add the plugin
+
+1. ionic cordova plugin remove com-pscu-google-plugin
+2. ionic cordova plugin add  /Users/jeffrey.tansey/repos/playground/ionic/cordova-plugin/google-pay-plugin
+3. ionic cordova build android
+4. ionic cordova run android --device
+
 
 # Usage
 
-    // declare the cordova variable at the top of your class, right after your imports
-    declare var cordova;
+  // app.component.ts
 
-    // call the checkTemperature function to get temperature
-    const temp = cordova.plugins.Temperature;
-    temp.checkTemperature((val) => {
-        console.log(val);
-    },
-    (err) => {
-        console.log(err);
-    })
+  const googlePay = window['cordova']['plugins']['GooglePay'];
+  googlePay.callFunctionOne((val) => {
+    console.log("You correctly called plugins function one", val);
+  },
+  (err) => {
+      console.log('Error' + err);
+  })
 
-    // call the isDeviceCompatible function to check if  your device has a temperature sensor
-    temp.isDeviceCompatible((val) => {
-      console.log(val);
-    },
-    (err) => {
-      console.log(err);
-    })
-
+# android-corova-plugin-v1

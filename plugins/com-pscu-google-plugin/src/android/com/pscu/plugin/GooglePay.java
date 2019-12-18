@@ -11,8 +11,15 @@ import android.content.Context;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.android.gms.wallet.WalletConstants;
+import com.google.android.gms.tapandpay.TapAndPayClient;
+import com.google.android.gms.tapandpay.TapAndPayStatusCodes;
 
 public class GooglePay extends CordovaPlugin {
+
+  private WalletConstants walletConstrants ;
+  private TapAndPayClient tapAndPayClient;
+  private TapAndPayStatusCodes tapAndPayStatusCodes;
 
   // public void initialize(CordovaInterface cordova, CordovaWebView webView) {
   //   super.initialize(cordova, webView);
@@ -28,9 +35,14 @@ public class GooglePay extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
       if (action.equals("callFunctionOne")) {
-          String message = args.getString(0);
-          this.functionOne(message, callbackContext);
-          return true;
+
+        // print("Status test: " + tapAndPayStatusCodes.TAP_AND_PAY_NO_ACTIVE_WALLET);
+
+        // String message = args.getString(0);
+        String message = String.valueOf(tapAndPayStatusCodes.TAP_AND_PAY_NO_ACTIVE_WALLET);
+
+        this.functionOne(message, callbackContext);
+        return true;
       }
       return false;
   }

@@ -23,7 +23,21 @@
                     value="com.pscu.plugin.GooglePay"/>
             </feature>
         </config-file>
-        <source-file src="src/android/com/pscu/plugin/GooglePay.java" 
-        target-dir="src/android/com/pscu/plugin" />
+
+        <source-file 
+            src="src/android/com/pscu/plugin/GooglePay.java" 
+            target-dir="src/android/com/pscu/plugin" />
+
+        <!-- <source-file 
+            src="src/android/play-services-tapandpay-17.0.1.aar" 
+            target-dir="lib" /> -->
+
+        <framework src="src/android/googlepay.gradle" custom="true" type="gradleReference"/>
+
+        <lib-file src="src/android/play-services-tapandpay-17.0.1.aar"/>
+
+        <!-- Depend on v18 of play-services-wallet library -->
+        <framework src="com.google.android.gms:play-services-wallet:18.0.0" />
+
     </platform>
 </plugin>
